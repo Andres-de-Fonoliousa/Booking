@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@tailwind utilities;
+
+
+:root {
+  /* Primary */
+  --deep-ocean: #1a3a5f;
+  --sea-glass: #4a9b9b;
+  --vintage-gold: #C5A47E;
+
+  /* Backgrounds & Surfaces */
+  --pearl-white: #f8f9fa;
+  --coastal-mist: #e0e6ed;
+
+  /* Accents */
+  --sunset-coral: #ff6b6b;
+  --driftwood: #5d4037;
+
+  /* Utility */
+  --light-text: #ffffff;
+}
+
+option {
+  all: unset; /* Reset all inherited styles */
+  -webkit-appearance: none; /* Disable WebKit styles */
+  -moz-appearance: none; /* Disable Firefox styles */
+  appearance: none; /* Standard property */
+  background-color: inherit !important;
+  color: inherit !important;
+  border-radius: inherit;
+}
+

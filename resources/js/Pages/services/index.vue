@@ -47,7 +47,7 @@ const props = defineProps({
                         <p class="text-sm text-[var(--deep-ocean)]/70 font-medium">Provided by: {{ service.provider.username }}</p>
                     </div>
 
-                    <!-- Book Button with Enhanced Hover -->
+                    <!-- Book Button  -->
                     <div class="flex pt-6 mt-auto space-x-8">
                         <Link
                             :href="route('bookings.create',[service])"

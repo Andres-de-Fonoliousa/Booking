@@ -8,7 +8,6 @@ const props = defineProps({
     user_id: Number,
 });
 
-// Check if current user is the service provider
 const isProvider = props.user_id === props.service.provider_id;
 </script>
 

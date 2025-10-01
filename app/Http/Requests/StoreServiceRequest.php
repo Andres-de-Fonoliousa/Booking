@@ -9,13 +9,8 @@ class StoreServiceRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        // Return true for now, or add authorization logic here.
-        // Alternatively, you can handle authorization in the controller.
         return true;
     }
-    /**
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
-     */
     public function rules(): array
     {
         return [

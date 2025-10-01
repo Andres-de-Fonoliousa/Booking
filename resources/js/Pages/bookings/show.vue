@@ -30,16 +30,16 @@ const cancelBooking = (bookingId) => {
 <template>
     <guest>
         <div id="wall" class="relative w-9/12 px-40 mx-auto bg-[var(--coastal-mist)] min-h-screen py-12">
-            <!-- Logo - Fixed image path -->
+            <!-- Logo -->
         <div id="logo" class="shadow-indigo-400 shadow-2xl absolute right-0 rounded-b-3xl place-self-end-safe  size-45 bg-cover bg-[url(C:\Users\LENOVO\Desktop\WebProjects\Booking\public\images\coastalLogo.jpeg)]"/>
 
-            <!-- Header - Fixed to match previous style -->
+            <!-- Header  -->
             <p class="bg-gradient-to-l from-[var(--sea-glass)]/30 to-[var(--coastal-mist)] pb-10 absolute top-0 left-0 w-4/5 pt-10 translate-x-6 text-5xl text-[var(--deep-ocean)] rounded-br-4xl text-shadow-lg  pl-50 place-self-start font-mono">{{ booking.service.name }}
                 <span id="wraper" class="absolute inset-0 bg-gradient-to-t from-[var(--coastal-mist)] to-15% rounded-br-4xl "></span>
                 <p class="pt-5 pl-10 text-sm text-[var(--sea-glass)] text-shadow-lg ">{{ booking.service.description }}</p>
             </p>
 
-            <!-- Booking Details Card - Improved layout -->
+            <!-- Booking Details Card  -->
             <div class="mt-50 bg-[var(--pearl-white)]/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-[var(--sea-glass)]/30">
                 <!-- Main content grid -->
                 <div class="grid grid-cols-1 gap-8 mb-8 md:grid-cols-3">
@@ -127,7 +127,7 @@ const cancelBooking = (bookingId) => {
                     </div>
                 </div>
 
-                <!-- Action Buttons - Updated colors to match palette -->
+                <!-- Action Buttons -->
                 <div class="pt-6 border-t border-[var(--sea-glass)]/30 flex flex-col sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-4">
                     <div class="space-x-5">
                     <Button

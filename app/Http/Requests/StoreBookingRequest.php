@@ -9,23 +9,15 @@ use App\Models\Service;
 
 class StoreBookingRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
+
     public function authorize(): bool
     {
-        // Get the service being booked
         $service = Service::find($this->service_id);
-
-        // Check if user is not the provider and doesn't have recent booking for this service
         return $service &&
             $this->user()->id !== $service->provider_id &&
             !$this->hasRecentBookingForService($this->user()->id, $this->service_id);
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     */
     public function rules(): array
     {
         return [
@@ -67,15 +59,12 @@ class StoreBookingRequest extends FormRequest
         ];
     }
 
-    /**
-     * Check if a user has a recent booking for a service
-     */
     protected function hasRecentBookingForService($userId, $serviceId): bool
     {
         return Booking::where('user_id', $userId)
             ->where('service_id', $serviceId)
-            ->where('created_at', '>=', now()->subHours(24)) // Within last 24 hours
-            ->whereIn('status', ['pending', 'confirmed']) // Only active bookings
+            ->where('created_at', '>=', now()->subHours(24))
+            ->whereIn('status', ['pending', 'confirmed'])
             ->exists();
     }
 
@@ -86,13 +75,10 @@ class StoreBookingRequest extends FormRequest
     {
         return Booking::where('provider_id', $providerId)
             ->where('booking_time', $bookingTime)
-            ->whereIn('status', ['pending', 'confirmed']) // Only active bookings
+            ->whereIn('status', ['pending', 'confirmed'])
             ->exists();
     }
 
-    /**
-     * Get custom error messages for validator errors.
-     */
     public function messages(): array
     {
         return [
@@ -102,9 +88,6 @@ class StoreBookingRequest extends FormRequest
         ];
     }
 
-    /**
-     * Handle a failed authorization attempt.
-     */
     protected function failedAuthorization()
     {
         throw new \Illuminate\Auth\Access\AuthorizationException(

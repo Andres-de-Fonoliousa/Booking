@@ -22,15 +22,12 @@ const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString(undefined, options);
 };
 
-// Example functions for handling actions\
 const confirmBooking = (bookingId) => {
     // Implement confirmation logic
-    // console.log('Confirm booking:', bookingId);
 };
 
 const cancelBooking = (bookingId) => {
     // Implement cancellation logic
-    // console.log('Cancel booking:', bookingId);
 };
 
 

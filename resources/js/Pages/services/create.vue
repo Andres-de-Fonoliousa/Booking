@@ -12,7 +12,7 @@ const props = defineProps({
 const form = useForm({
     name: '',
     provider_id: '',
-    status: 'active', // Default to active
+    status: 'active',
     duration: '',
     price: '',
     description: '',
